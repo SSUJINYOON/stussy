@@ -1,0 +1,37 @@
+.section6__main .section6-container {
+  background: #000;
+  padding: 100px 80px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+}
+.section6__main .section6-container h2 img {
+  width: 85%;
+  margin: 0 auto;
+  transition: all 0.4s;
+}
+.section6__active {
+  transition: all 1.5s;
+  animation: first 1.5s;
+}
+@keyframes first {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section6 .section6-container {
+    padding: 60px 5px;
+  }
+  .section6 .section6-container h2 img {
+    width: 100%;
+    margin: 0 auto;
+  }
+}/*# sourceMappingURL=section6.css.map */

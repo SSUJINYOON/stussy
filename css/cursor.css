@@ -1,0 +1,47 @@
+@charset "UTF-8";
+* {
+  cursor: none;
+}
+
+.cursor {
+  /* 모바일 버전에서 cursor 숨기기 */
+  pointer-events: none;
+  position: fixed;
+  z-index: 100;
+  top: 1000000px;
+  left: 1000000px;
+  transform: translate(-50%, -50%);
+}
+@media (hover: none) and (pointer: coarse) {
+  .cursor {
+    display: none !important;
+  }
+}
+.cursor.hover {
+  animation: cursor 0.5s infinite;
+  mix-blend-mode: difference;
+}
+.cursor.click {
+  animation: rotate 0.3s infinite;
+}
+.cursor img {
+  width: 30px;
+  height: 30px;
+}
+
+@keyframes cursor {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}# sourceMappingURL=cursor.css.map

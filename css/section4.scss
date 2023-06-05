@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+.se04-cursor {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	background: #000;
+	color: #fff;
+	position: fixed;
+	z-index: 55;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	opacity: 1;
+	transition: all 0.3s;
+	transition-property: opacity;
+	p {
+		margin: 0 5px;
+	}
+	i {
+		font-size: 24px;
+	}
+
+	@media screen and (max-width: 800px) {
+		.se04-cursor {
+			display: none;
+		}
+	}
+}
+
+/* 가로 애니메이션 */
+.section4 {
+	position: relative;
+	color: #000;
+	overflow: hidden;
+}
+.section4__scroll {
+	background-color: #000;
+	width: 100%;
+	overflow-x: hidden;
+	font-family: "VT323", monospace;
+	font-weight: 600;
+	letter-spacing: 0.5em;
+	word-spacing: -1em;
+	.cover {
+		width: 100vw;
+		display: flex;
+		&:nth-child(1) {
+			background-color: #ffffff;
+		}
+		p {
+			display: flex;
+			font-size: 7rem;
+			border-top: 1px solid #000;
+			border-bottom: 1px solid #000;
+		}
+		img {
+			width: 100px;
+			height: 100px;
+			margin-top: 10px;
+		}
+	}
+}
+@media screen and (max-width: 800px) {
+	.section4 {
+		.section4__scroll {
+			.cover {
+				p {
+					font-size: 4rem;
+				}
+				img {
+					width: 50px;
+					height: 50px;
+					margin-top: 8px;
+				}
+			}
+		}
+	}
+}
+
+/* MAIN CONTAINER */
+.__main {
+	position: relative;
+	overflow: hidden;
+	.shopBX {
+		box-sizing: border-box;
+		position: relative;
+		display: flex;
+		@media screen and (min-width: 1000px) {
+			width: 200%;
+		}
+		@media screen and (min-width: 600px) and (max-width: 1000px) {
+			width: 300%;
+		}
+		@media screen and (max-width: 600px) {
+			width: 600%;
+		}
+		.se04-slide {
+		flex: 1;
+			position: relative;
+			padding: 50px 50px;
+			box-sizing: border-box;
+			border-right: 1px solid #000;
+			border-bottom: 1px solid #000;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			> a {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+			}
+			h2 {
+				font-size: 28px;
+				font-family: "Pretendard";
+				font-weight: 700;
+				height: 3em;
+				line-height: 1.5em;
+				overflow: hidden;
+			}
+			ol {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 22px;
+				font-family: "Pretendard";
+				font-weight: 400;
+				font-size: 20px;
+				color: #000000;
+			}
+			div.img {
+				position: relative;
+				overflow: hidden;
+				z-index: 1;
+				transition: all 0.4s;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+				margin-top: 15px;
+				img{
+					width: 100%;
+				}
+				.hover{
+					position: absolute;
+					left:100%;
+					top:0;
+					transition: left 0.3s;
+				}
+				&:hover{
+					.hover{
+						left:0;
+					}
+				}
+				// border: 1px solid red;
+				
+			}
+		}
+	}
+	.se04-slide:hover {
+		filter: grayscale(0);
+		color: #000;
+		background-image: url(../img/section4/se04-SHOP-BG.jpg);
+		background-position: bottom right;
+		h2 {
+			text-decoration: underline;
+			text-underline-position: under;
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.__main {
+		.shopBX {
+
+			.se04-slide {
+				div.img {
+					img {
+
+					}
+				}
+			}
+		}
+	}
+}
+
+/* VIEW MORE */
+.viewmore {
+	background: url("../img/section4/blog_btnbg.png");
+	background-size: cover;
+	background-position: center;
+	height: 90px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s;
+	position: relative;
+	border-bottom: 1px solid #000;
+	> a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	p {
+		font-size: 40px;
+		font-family: "Garmond";
+		font-weight: bold;
+		.bracket {
+			font-family: "VT323", monospace;
+			font-weight: 500;
+		}
+	}
+	&:hover {
+		background-image: url("../img/section4/blog_btnbg_over.png");
+		p {
+			color: #fff;
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.viewmore {
+		height: 80px;
+		transition: 0.3s;
+		p,
+		.bracket {
+			font-size: 25px;
+		}
+		&:hover {
+			background-image: url(../img/section4/view_bg_over_mob.jpg);
+			p {
+				color: #fff;
+			}
+		}
+	}
+}

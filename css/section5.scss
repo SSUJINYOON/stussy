@@ -1,0 +1,302 @@
+.section5 {
+    position: relative;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+    min-height: 950px;
+    transition: all 0.5s;
+    @media screen and (min-width: 800px) {
+        height: 100%;
+    }
+    /* 눈 모션----------- */
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.99;
+        z-index: 0;
+    }
+    /* 폼 컨테이너 (작성하는부분)----------------- */
+    .FormContainer {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        width: 95%;
+        height: 100%;
+        margin: 0 auto;
+        font-family: "Arial Black", sans-serif;
+        h2 {
+            position: relative;
+            max-width: 1000px;
+            margin-left: auto;
+            text-transform: uppercase;
+            transition: all 0.5s;
+             /* 제목 밑 비행기 공통-------------*/
+             .line{
+                position: absolute;
+                height: 3px;
+                width: 0px;
+                background-color: rgb(#fff, 0.5);
+             }
+             i{
+                position: absolute;
+                display: inline-block;
+                font-size: 0.4em;
+                transform: rotate(45deg);
+             }
+            @media screen and (min-width: 800px) { //제목 제일 큼
+                padding-top: 90px;
+                padding-bottom: 110px;
+                padding-left: 55px;
+                font-size: 6.5em;
+                box-sizing: border-box;
+                /* 제목 밑 비행기--------------*/
+                .line {
+                    left: 55px;
+                    bottom: 110px;
+                    transition: width 3s;
+                }
+                &.active .line {
+                    width: 550px;
+                }
+                i {
+                    left: 45px;
+                    bottom: 95px;
+                    transition: left 3s, transform 3s 0.8s;
+                }
+                &.active i {
+                    left: 595px;
+                    transform: rotate(10deg);
+                }
+            } //h2 lg
+            @media screen and (max-width: 800px) and (min-width: 500px) {
+                //제목 중간
+                padding-top: 90px;
+                padding-bottom: 80px;
+                font-size: 6em;
+                text-align: center;
+                /* 제목 밑 비행기--------------*/
+                .line {//라인
+                    left: 8%;
+                    bottom: 80px;
+                    transition: width 3s;
+                }
+                &.active .line {
+                    width: 84%;
+                }
+                i { //비행기
+                    left: 6%;
+                    bottom: 68px;
+                    transition: left 3s, transform 3s 0.8s;
+                }
+                &.active i {
+                    left: calc(82% + 45px);
+                    transform: rotate(10deg);
+                }
+            } //h2 md
+            @media screen and (max-width: 600px) {//제목 작음
+                padding-top: 100px;
+                padding-bottom: 80px;
+                font-size: 4em;
+                width: 380px;
+                margin: 0 auto;
+                text-align: center;
+                /* 제목 밑 비행기--------------*/
+                .line {
+                    //라인
+                    left: 5%;
+                    bottom: 80px;
+                    transition: width 2s;
+                }
+                &.active .line {
+                    width: 88%;
+                }
+                i {//비행기
+                    left: 4%;
+                    bottom: 69px;
+                    transition: left 2s, transform 2s 0.5s;
+                }
+                &.active i {
+                    left: calc(88% + 1px);
+                    transform: rotate(10deg);
+                }
+            } // h2 sm
+        } //h2
+        /* form -----------------------------------------*/
+        form {
+            max-width: 700px;
+            margin-left: auto;
+            transition: all 0.5s;
+            @media screen and (min-width: 800px) {
+                padding-right: 9%;
+                box-sizing: border-box;
+            } //form lg
+            @media screen and (max-width: 800px) {
+                margin: 0 auto;
+            }
+            p {
+                padding: 12px;
+                transition: padding 0.5s;
+                label {
+                    display: block;
+                    width: 100%;
+                    font-size: 1.4em;
+                    margin-bottom: 7px;
+                    font-family: "VT323", monospace;
+                    overflow: hidden;
+                    transform: translateX(-23px);
+                    transition: transform 0.5s;
+                    &::before {
+                        //화살표 아이콘----------------------------------
+                        display: inline-block;
+                        font-style: normal;
+                        font-variant: normal;
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        content: "\f178";
+                        margin-right: 7px;
+                        transform: translateX(-23px);
+                        transition: transform 0.5s;
+                    }
+                    &.active {
+                        transform: translateX(0px);
+                    }
+                    &.active::before {
+                        //아이콘 모션
+                        display: inline-block;
+                        transform: translateX(-8px);
+                    }
+                } //label
+                input,
+                textarea {
+                    width: 100%;
+                    padding: 5px 5px;
+                    margin: 5px 0;
+                    background-color: rgb(#000, 0.1);
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    border-bottom: 1px solid rgba(#fff, 0.5);
+                    font-family: "Noto Sans KR", sans-serif;
+                    &:hover {
+                        background-color: rgb(#fff, 0.1);
+                    }
+                }
+                @media screen and (max-width: 800px) {
+                    padding: 12px;
+                } //p sm
+            } //p
+            div.contact-box {
+                //가로 두줄------------------
+                @media screen and (min-width: 800px) {
+                    display: flex;
+                    p {
+                        flex: 1;
+                    }
+                }
+            } //div.contact-box
+            /* 버튼 ---------------------- */
+            .contactBtn {
+                display: block;
+                margin: 10px auto;
+                width: 100px;
+                border: 2px solid #fff;
+                background-color: #fff;
+                color: #000;
+                padding: 10px;
+                border-radius: 40px;
+                font-family: "Arial Black", sans-serif;
+                transition: all 0.3s;
+                text-align: center;
+                margin-bottom: 1px;
+                @media screen and (max-width: 800px) {
+                    margin-top: 20px;
+                    margin-bottom: 70px;
+                } //sm
+                &:hover {
+                    border: 2px solid #fff;
+                    background-color: #000;
+                    color: #fff;
+                }
+                button {
+                    padding-right: 7px;
+                    i {
+                        margin-right: 5px;
+                    }
+                }
+            } //.contactBtn
+        } //form
+    } //.FormContainer
+
+    /* 공 이미지--------------------------------- */
+    .section5-img {
+        position: absolute;
+        width: 40%;
+        overflow: hidden;
+        border-radius: 50%;
+        background-color: rgb(92, 92, 92);
+        transition: left 1s, right 1s;
+        img {
+            width: 100%;
+        }
+        /* 이미지 개별 위치 */
+        &.img1 {
+            left: 7%;
+            top: 60%;
+            animation: ball55 3s infinite linear;
+        }
+        &.img2 {
+            right: -45%;
+            top: 60%;
+            animation: ball55 5s infinite linear;
+        }
+        //1단계
+        @media screen and (max-width: 1500px) and (min-width: 1000px) {
+            &.img2 {
+                right: -49%;
+            }
+        } //2단계
+        @media screen and (max-width: 1000px) and (min-width: 950px) {
+            &.img1 {
+                left: 0%;
+            }
+            &.img2 {
+                right: -53%;
+            }
+        } //3단계
+        @media screen and (max-width: 950px) and (min-width: 800px) {
+            &.img1 {
+                left: -10%;
+            }
+            &.img2 {
+                right: -54%;
+            }
+        } //4단계
+        @media screen and (max-width: 800px) and (min-width: 750px) {
+            &.img1 {
+                left: -50%;
+            }
+            &.img2 {
+                right: -60%;
+            }
+        } //5단계 자연스럽게 없애기
+        @media screen and (max-width: 750px) {
+            display: none;
+        } //sm
+    } // .section5-img
+} //.section5
+
+@keyframes ball55 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

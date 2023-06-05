@@ -1,0 +1,195 @@
+.section1 {
+  background-color: aqua;
+  @media screen and (min-width: 1000px) {
+    height: 400%;
+  }
+  @media screen and (max-width: 1000px) {
+  }
+  figure {
+    &.about1 {
+      background-color: rgb(0, 0, 0);
+      @media screen and (min-width: 1000px) {
+        .ko {
+          margin-top: 125px;
+        }
+      }
+    }
+    &.about2 {
+      background-color: rgb(26, 26, 26);
+    }
+    &.about3 {
+      background-color: rgb(78, 78, 78);
+    }
+    @media screen and (min-width: 1000px) {
+      height: calc(300% + 600px);
+      display: flex;
+      flex-direction: row-reverse;
+      position: sticky;
+      z-index: 3;
+      h3 {
+        position: sticky;
+      }
+      &.about1 {
+        top: 60px;
+        margin-top: 0px;
+        height: calc(33.333% - 200px);
+      }
+      &.about2 {
+        top: 120px;
+        margin-top: 60px;
+        height: calc(33.333% - 200px);
+      }
+      &.about3 {
+        top: 180px;
+        height: calc(33.333% - 200px);
+      }
+    } //lg
+    @media screen and (max-width: 1000px) {
+      h3 {
+        position: sticky;
+        z-index: 3;
+        top: 45px;
+      }
+    } //figure  sm
+    img {
+      object-fit: cover;
+      object-position: center;
+      @media screen and (min-width: 1000px) {
+        width: 40%;
+        height: 100%;
+        padding-top: 30px;
+      }
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+        height: auto !important;
+      }
+    } //img
+    figcaption {
+      position: relative;
+      height: 100%;
+      @media screen and (min-width: 1000px) {
+        flex: 1;
+      } //lg
+      @media screen and (max-width: 1000px) {
+      } //sm
+      /* 제목------------------------------------------------ */
+      h3 {
+        background: inherit;
+        color: rgba(#fff, 1);
+        font-family: "Arial", sans-serif;
+        font-size: 3em;
+        font-weight: 700;
+        box-sizing: border-box;
+        transition: all 0.5s;
+        @media screen and (min-width: 1000px) {
+          height: 100px;
+          line-height: 100px;
+          box-sizing: border-box;
+          padding-left: 30px;
+        }
+        @media screen and (max-width: 1000px) {
+          font-size: 2.4em;
+          text-align: center;
+          height: 80px;
+          line-height: 80px;
+        }
+      }
+      /* 글자 --------------------------------------------------- */
+      .textbox {
+        margin-top: 70px;
+        @media screen and (min-width: 1000px){
+          display: block !important;
+        }
+        p {
+          position: relative;
+          max-width: 85%;
+          margin: 0 auto;
+          color: #fff;
+          box-sizing: border-box;
+          padding: 10px 0;
+          font-family: "Gothic A1", sans-serif;
+          &::after {
+            content: "";
+            width: 50px;
+            height: 3px;
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          &.en {
+            text-align: justify; //텍스트 균등 분할
+            color: rgba(#fff, 0.8);
+          }
+          @media screen and (min-width: 1000px) {
+            font-weight: 400;
+            line-height: 1.5em;
+            font-size: 1.2em;
+            transition: transform 1s 0.2s, opacity 0.8s 0.2s; //activeT
+            &.ko {
+              margin-bottom: 60px;
+              transform: translateY(-90px);
+              opacity: 0;
+            }
+            &.en {
+              margin-bottom: 30px;
+              transform: translateY(90px);
+              opacity: 0;
+            }
+          }
+          @media screen and (max-width: 1000px) {
+            line-height: 1.4em;
+            margin-bottom: 20px;
+            &.ko {
+              font-size: 1.2em;
+            }
+            &.en {
+              font-size: 1.1em;
+            }
+          }
+        } //p
+      } //textbox
+    } //figcaption
+    //figure.active-------------------------------------------
+    &.active {
+      //figure.active
+      &.about1 {
+        background-color: rgb(26, 26, 26);
+      }
+      &.about2 {
+        background-color: rgb(52, 52, 52);
+      }
+      &.about3 {
+        background-color: rgb(78, 78, 78);
+      }
+      h3 {
+        color: rgba(#fff, 0.8);
+        font-size: 1.8em;
+        height: 60px;
+        line-height: 60px;
+        @media screen and (min-width: 1000px) {
+        }
+        @media screen and (max-width: 1000px) {
+          background: rgba(rgb(0, 0, 0), 1);
+          font-size: 2em;
+        }
+      }
+    } //figure.active
+    &.activeT{
+      .textbox {
+        @media screen and (min-width: 1000px) {
+          p {
+            &.ko {
+              transform: translateY(0);
+              opacity: 1;
+            }
+            &.en {
+              transform: translateY(0);
+              opacity: 1;
+            }
+          } //p
+        } //lg
+      } //.textbox
+    }//figure.activeT
+  } //figure
+} //.section1

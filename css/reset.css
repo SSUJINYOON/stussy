@@ -1,0 +1,36 @@
+*{
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  /* <br>을 단어 단위로 묶어준다 */
+}
+
+li{
+  list-style: none;
+}
+img,svg,iframe,video{
+  display: block;
+}
+iframe{
+  border: none;
+}
+input,textarea,select{
+  box-sizing: border-box;
+}
+table{
+  border-collapse: collapse;
+}
+button{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hidden{
+  position: fixed;
+  left: 1000000px;
+}
+body, html {
+  height:100%;
+  box-sizing: border-box;
+  /* body 전체에 padding이 들어가있다 */
+}

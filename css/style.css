@@ -1,0 +1,50 @@
+/* 
+  폰트 
+
+-Arial
+  font-family: 'Arial', sans-serif;
+  font-family: 'Arial Black', sans-serif;
+
+-Noto Sans KR
+  font-family: 'Noto Sans KR', sans-serif;
+
+-Acumin Variable Concept
+  font-family: 'acumin-pro',sans-serif;
+
+- VT323
+  font-family: 'VT323', monospace;
+
+- Microsoft Uighur
+  font-family: 'microsoft-uighur-bold', sans-serif;
+
+- Gothic A1
+  font-family: 'Gothic A1', sans-serif;
+*/
+
+
+* {
+  font-family: inherit;
+  /* 네부모의 글꼴을 가져와라. 상속성 유지 *로하면 객체가 중첩도ㅒㅆ을때 따로 지정해줘야함. 그래서 가장큰객체에 설정하고 나머지는 강제로 지정.  */
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+  font-style: inherit; 
+  text-decoration: inherit;
+}
+
+body {
+  font-family: 'Arial' , 'Noto Sans KR' , sans-serif;/* 첫번째 애가 영어, 숫자 담당, 두번째 애가 한글이라 한글 담당(순서중요) */
+  font-size: 16px;/* 보통 14~16px 많이사용 */
+  color: #000;
+  font-weight: normal;/* 보통 normal로 */
+  font-style: normal;/* 원래 기울기가 있는 애들, 두꺼운애들, 큰애들을 보통으로 설정 */
+  text-decoration: none;
+}
+
+:root {
+  --ti-cursor-margin-left: 0.1em;
+  --ti-cursor-color: dodgerblue;
+}
+
+
+

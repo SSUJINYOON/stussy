@@ -1,0 +1,42 @@
+body {
+  overflow: hidden; /* 스크롤바를 숨겨준다 */
+}
+.preloader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .text {
+    height: 170px;
+    width: 170px;
+    animation: rounded 8s linear infinite;
+    img {
+      width: 100%;
+      height: 100%;
+    } //img
+  } //text
+  .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    img {
+      width: 100%;
+      height: 100%;
+    } //img
+  } //circle
+  @keyframes rounded {
+    100% {
+      transform: rotate(360deg);
+    }
+  } //keyframes
+} //preloader
